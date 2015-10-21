@@ -1,5 +1,5 @@
-Package: com.i0sa.grabberapp8
-Name: GrabberApp8
+Package: com.i0sa.grabberapp9
+Name: GrabberApp9
 Depends: firmware (>= 9.0), mobilesubstrate, applist, preferenceloader
 Version: 1.0
 Architecture: iphoneos-arm
