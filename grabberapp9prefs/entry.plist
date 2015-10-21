@@ -1,0 +1,10 @@
+{
+    entry = {
+	bundle = grabberapp9prefs;
+	cell = PSLinkCell;
+	detail = grabberapp9prefsListController;
+	icon = grabapp9.png;
+	isController = 1;
+	label = GrabberApp9;
+    };
+}

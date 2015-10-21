@@ -1,0 +1,12 @@
+Package: com.i0sa.grabberapp9
+Name: GrabberApp9
+Depends: firmware (>= 9.0), mobilesubstrate, applist, preferenceloader
+Architecture: iphoneos-arm
+Description: Change camera grabber app
+Maintainer: Osama Muhammed <me@i0sa.com>
+Author: i0sa
+dev: Osama Muhammed
+Homepage: http://i0sa.com
+Section: Tweaks
+Version: 1.0
+Installed-Size: 160
