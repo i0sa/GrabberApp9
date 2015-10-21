@@ -13,18 +13,22 @@ BOOL camEnabled = [settings objectForKey:@"camEnabled"] == nil ? NO : [[settings
 BOOL secAppEnabled = [settings objectForKey:@"secAppEnabled"] == nil ? NO : [[settings objectForKey:@"secAppEnabled"] boolValue];
 
 if(camEnabled == YES){
-   SBApplication *camapp = [[%c(SBApplicationController) sharedInstance] applicationWithDisplayIdentifier:@"com.apple.camera"];
+   SBApplication *camapp = [[%c(SBApplicationController) sharedInstance] applicationWithBundleIdentifier:@"com.apple.camera"];
    if(arg1 == camapp){
       NSString *appName = [settings valueForKey:@"camApp"] == nil ? @"com.apple.camera" : [settings valueForKey:@"camApp"];
-      SBApplication *app = [[%c(SBApplicationController) sharedInstance] applicationWithDisplayIdentifier:appName];
+      SBApplication *app = [[%c(SBApplicationController) sharedInstance] applicationWithBundleIdentifier:appName];
       arg1 = app;
    }
 }
 
 if(secAppEnabled == YES){
    if(arg1 == nil){ // need to make it limit, to not to make every nil that app
-      SBApplication *app = [[%c(SBApplicationController) sharedInstance] applicationWithDisplayIdentifier:[settings valueForKey:@"secApp"]];
-      arg1 = app;
+      if([settings valueForKey:@"secApp"]){
+	      SBApplication *app = [[%c(SBApplicationController) sharedInstance] applicationWithBundleIdentifier:[settings valueForKey:@"secApp"]];
+	      arg1 = app;
+      } else {
+		  arg1 = nil;
+      }
    }
 }
 
