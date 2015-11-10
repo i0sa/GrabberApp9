@@ -22,7 +22,7 @@ if(camEnabled == YES){
 }
 
 if(secAppEnabled == YES){
-   if(arg1 == nil){ // need to make it limit, to not to make every nil that app
+   if(arg1 == nil){ // this stands for the left screen grabber, the method is called to check if left screen icon is there or not, and same for the right, nil usually stands for the left screen and camera for the right.
       if([settings valueForKey:@"secApp"]){
 	      SBApplication *app = [[%c(SBApplicationController) sharedInstance] applicationWithBundleIdentifier:[settings valueForKey:@"secApp"]];
 	      arg1 = app;
